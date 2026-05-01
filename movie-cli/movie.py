@@ -11,11 +11,32 @@ class Movie:                                                    #Defines a BLUEP
 movies = []                                                     #List where all the movie objects will be placed
 
 def enter_movie():                                              #Defines a function where the user can enter a movie
-    title = input("Please enter the Movie Title: ")             #Ask for the movie information
-    director = input("Please enter the Movie Director: ")       #Ask for the movie information
-    year = input("Please enter the Movie Year: ")               #Ask for the movie information  
-    genre = input("Please enter the Movie Genre: ")             #Ask for the movie information
-   
+    
+    while True:                                                 #Keeps asking the user to enter a valid movie title.
+        title = input("Please enter the Movie Title: ")         #Ask for the movie information
+        if title != "":                                         #If the user enters something
+            break                                               #The program moves on
+        print("Please enter the Movie Title.")                  #If the user enters nothing, print message
+
+    while True:                                                 #Keeps asking the user to enter a valid movie director.
+        director = input("Please enter the Movie Director: ")   #Ask for the movie information                
+        if director != "":                                      #If the user enters something
+            break                                               #The program moves on
+        print("Please enter the Movie Director.")               #If the user enters nothing, print message
+
+    while True:                                                 #Keeps asking the user to enter a valid movie year.
+        year = input("Please enter the Movie Year: ")           #Ask for the movie information
+        if year.isdigit():                                      #Checks if the user entered a valid number
+            break                                               #If valid, the program moves on
+        print("Plase enter a four digit year.")                 #Print message
+    year = int(year)                                            #Converts string to integer
+
+    while True:                                                 #Keeps asking the user to enter a valid movie genre
+        genre = input("Please enter the Movie Genre: ")         #Ask for the movie information
+        if genre != "":                                         #If the user enters something
+            break                                               #The program moves on
+        print("Please enter the Movie Genre.")                  #If the user enters nothing, print message
+
     movie = Movie(title, director, year, genre)                 #This line creates a new Movie OBJECT using the collected inputs and assigns it to the variable movie. (A specific thing created from that blueprint)
 
     movies.append(movie)                                        #Adds the newly listed movies at the end of the movie list
