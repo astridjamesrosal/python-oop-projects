@@ -85,11 +85,18 @@ class Bank:
         for account in self.accounts.values():
             account.display()
 
-bank = Bank("MyBank")
-bank.create_account("Astral")
-bank.deposit(1, 500)
-bank.withdrawal(1, 200)
-bank.list_accounts()
+while True:
 
-account = bank.get_account(1)
-account.get_history()
+    print("1. Create an Account")
+    print("2. Deposit")
+    print("3. Withdraw")
+    print("4. View Account")
+    print("5. View Transaction History")
+    print("6. List of all Account")
+    print("7. Exit")
+
+    choice = input("Please choose a number: ")
+
+    if choice == "1":
+        create_account()
+    elif choice == "2"
