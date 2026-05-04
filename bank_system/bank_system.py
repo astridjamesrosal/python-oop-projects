@@ -85,6 +85,9 @@ class Bank:
         for account in self.accounts.values():
             account.display()
 
+bank = Bank("Astral Bank")
+print("Welcome to Astral, your money safe in the galaxy!")
+
 while True:
 
     print("1. Create an Account")
@@ -98,5 +101,40 @@ while True:
     choice = input("Please choose a number: ")
 
     if choice == "1":
-        create_account()
-    elif choice == "2"
+        owner_name = input("Enter your Name: ")
+        bank.create_account(owner_name)
+        print(f"Account created successfully. Your account number is: {bank.next_account_number - 1}")
+
+    elif choice == "2":
+        account_number = int(input("Enter your account number: "))
+        account = bank.get_account(account_number)
+        if account:
+            amount = float(input("Enter the amount you would like to deposit: "))
+            bank.deposit(account_number, amount)
+            print(f"Successfully deposited {amount}.")
+
+    elif choice == "3":
+        account_number = int(input("Enter your account number: "))
+        account = bank.get_account(account_number)
+        if account:
+            amount = float(input("Enter the amount you would like to withdraw: "))
+            bank.withdrawal(account_number, amount)
+            print(f"Successfully withdrew {amount}.")
+
+    elif choice == "4":
+        account_number = int(input("Enter your account number: "))
+        account = bank.get_account(account_number)
+        if account:
+            account.display()
+
+    elif choice == "5":
+        account_number = int(input("Enter your account number: "))
+        account = bank.get_account(account_number)
+        if account:
+            account.get_history()
+
+    elif choice == "6":
+        bank.list_accounts()
+
+    elif choice == "7":
+        exit()
