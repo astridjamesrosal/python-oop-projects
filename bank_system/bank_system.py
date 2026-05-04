@@ -18,14 +18,33 @@ class Account:
         self.transactions = []
 
     def deposit(self, amount):
+        if amount <= 0:
+            print("Deposit amount must be positive")
+            return
+        
         self.account_balance = self.account_balance + amount
         new_transaction = Transaction(amount, datetime.now(), "Deposit", self.account_balance)
         self.transactions.append(new_transaction)
+
                 
     def withdrawal(self, amount):
+        if amount <= 0:
+            print("Withdrawal amount must be positive")
+            return
+        
         if amount > self.account_balance:
             print("The withdrawal amount exceeds the current balance")
             return
         self.account_balance = self.account_balance - amount
         new_transaction = Transaction(amount, datetime.now(), "Withdrawal", self.account_balance)
         self.transactions.append(new_transaction)
+
+    def get_balance(self):
+        return self.account_balance
+    
+    def get_history(self):
+        for new_transaction in self.transactions:
+            new_transaction.display()
+
+    def display(self):
+        print(f"Account Name: {self.owner_name}, Account Number: {self.account_number}, With a current balance of {self.account_balance}")
