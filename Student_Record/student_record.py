@@ -1,3 +1,5 @@
+import json
+
 class Student:
     def __init__(self, name, number, year, grade):
         if name.strip() == "":
@@ -27,7 +29,14 @@ class Student:
         return cls(data["name"], data["number"], data["year"], data["grade"])
 
 class FileManager:
-    def save(self):
-
+    def save(self, data):
+        with open ("student_list.json", "w") as f:
+            json.dump(data, f)
+            
     def load(self):
+        try:
+            with open("student_list.json", "r") as f:
+                return json.load(f)
     
+        except FIleNotFoundError:
+            return []
