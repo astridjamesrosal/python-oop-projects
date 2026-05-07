@@ -71,4 +71,8 @@ class StudentRegistry:
                 return
         else:
             raise ValueError("Inputed ID doesn't exists.")
-        
+
+    def load_students(self, data):
+        for dictionary in data:
+            student = Student.from_dict(dictionary)
+            self.students.append(student)
