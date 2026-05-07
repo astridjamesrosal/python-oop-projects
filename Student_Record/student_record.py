@@ -38,5 +38,37 @@ class FileManager:
             with open("student_list.json", "r") as f:
                 return json.load(f)
     
-        except FIleNotFoundError:
+        except FileNotFoundError:
             return []
+
+class StudentRegistry:
+    def __init__(self):
+        self.students = []
+
+    def add(self, name, number, year, grade):
+        for student in self.students:
+            if student.student_number == number:
+                raise ValueError("Inputed ID already exists.")
+        else:
+            new_student = Student(name, number, year, grade)
+            self.students.append(new_student)   
+        
+    def view_all(self):
+        return self.students
+
+    def update_grade(self, number, grade):
+        for student in self.students:
+            if student.student_number == number:
+                student.student_grade = grade
+                return
+        else:
+            raise ValueError("Inputed ID doesn't exists.")
+        
+    def delete(self, number):
+        for student in self.students:
+            if student.student_number == number:
+                self.students.remove(student)
+                return
+        else:
+            raise ValueError("Inputed ID doesn't exists.")
+        
