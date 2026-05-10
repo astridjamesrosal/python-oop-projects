@@ -70,3 +70,22 @@ class Library:
         self.books.append(book)
         self.save()
 
+    def search_by_title(self, title):
+        result = [book for book in self.books if book.title == title]
+        return result
+    
+    def search_by_author(self, author):
+        result = [book for book in self.books if book.author == author]
+        return result
+
+    def filter_by_genre(self, genre):
+        result = [book for book in self.books if book.genre == genre]
+        return result
+    
+    def filter_by_availability(self, is_available):
+        result = [book for book in self.books if book.is_available == is_available]
+        return result
+    
+    def sort_by_year(self):
+        result = sorted(self.books, key=lambda book: book.year)
+        return result
