@@ -89,3 +89,23 @@ class Library:
     def sort_by_year(self):
         result = sorted(self.books, key=lambda book: book.year)
         return result
+
+    def borrow_book(self, id):
+        for book in self.books:
+            if book.id == id:
+                result = book.borrow()
+                if result:
+                    self.save()
+                return result
+        else:
+            return False
+        
+    def return_book(self, id):
+        for book in self.books:
+            if book.id == id:
+                result = book.return_book()
+                if result:
+                    self.save()
+                return result
+        else:
+            return False
