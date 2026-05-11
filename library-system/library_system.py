@@ -69,6 +69,7 @@ class Library:
         book = Book(next_id, title, author, genre, year)
         self.books.append(book)
         self.save()
+        return book
 
     def search_by_title(self, title):
         result = [book for book in self.books if book.title == title]
