@@ -4,9 +4,9 @@ from library_system import Book, Library
 class TestLibrary(unittest.TestCase):
 
     def setUp(self):
-        self.library = Library("test_library.json")
+        self.library = Library("test_library.json")         #Use test_library.json to separate test data from real data in the actual program.
 
-    def tearDown(self):
+    def tearDown(self):                                     #Delete the data after each test to start with a clean and empty library and prevent leftover data from affecting the next test
         import os
         if os.path.exists("test_library.json"):
             os.remove("test_library.json")
@@ -22,7 +22,7 @@ class TestLibrary(unittest.TestCase):
         self.assertEqual(result, True)
         self.assertEqual(self.library.books[0].is_available, False)
 
-    def test_borrow_book_failure(self):
+    def test_borrow_nonexistent_book(self):
         result = self.library.borrow_book(2)
         self.assertEqual(result, False)
 
@@ -33,7 +33,7 @@ class TestLibrary(unittest.TestCase):
         self.assertEqual(result, True)
         self.assertEqual(self.library.books[0].is_available, True)
 
-    def test_return_book_failure(self):
+    def test_return_nonexistent_book(self):
         result = self.library.return_book(2)
         self.assertEqual(result, False)
 

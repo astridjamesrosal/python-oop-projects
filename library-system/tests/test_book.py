@@ -6,7 +6,7 @@ class TestBook(unittest.TestCase):
     def test_borrow_available_book(self):
         book = Book(1, "Harry Potter", "J.K. Rowling", "Fantasy", 1991)
         result = book.borrow()
-        self.assertEqual(result, True)
+        self.assertEqual(result, True)              #Needs both assert for the result and state change because one passing doesn't guarantee the other.
         self.assertEqual(book.is_available, False)
 
     def test_borrow_already_borrowed_book(self):
