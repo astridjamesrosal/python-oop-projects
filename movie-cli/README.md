@@ -15,6 +15,6 @@
 - Applied Encapsulation to keep the data and logic that acts on it inside the class that owns it. No unnecessary data for the main loop that it doesn't need to run.
 
 ## Preview
-![Main Menu](./Movie_Preview_1.png)
-![Adding a Movie](./Movie_Preview_2.png)
-![Viewing the Movie List](./Movie_Preview_3.png)
+![Main Menu](./Movie_Preview_1.jpg)
+![Adding a Movie](./Movie_Preview_2.jpg)
+![Viewing the Movie List](./Movie_Preview_3.jpg)
