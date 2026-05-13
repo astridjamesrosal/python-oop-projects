@@ -19,10 +19,10 @@
 - Implemented ID Collision prevention using the max ID method. This ensures that the next id that will be assigned will be plus 1 of the highest existing ID in the list.
 
 ## Preview
-![Main Menu](./Bank_Preview_1.jpg.png)
-![Creating an Account](./Bank_Preview_2.jpg.png)
-![Deposit to an Account](./Bank_Preview_3.jpg.png)
-![Withdraw from an Account](./Bank_Preview_4.jpg.png)
-![View an Account](./Bank_Preview_5.jpg.png)
-![View Transaction History](./Bank_Preview_6.jpg.png)
-![View All Accounts](./Bank_Preview_7.jpg.png)
+![Main Menu](./Bank_Preview_1.jpg)
+![Creating an Account](./Bank_Preview_2.jpg)
+![Deposit to an Account](./Bank_Preview_3.jpg)
+![Withdraw from an Account](./Bank_Preview_4.jpg)
+![View an Account](./Bank_Preview_5.jpg)
+![View Transaction History](./Bank_Preview_6.jpg)
+![View All Accounts](./Bank_Preview_7.jpg)
